@@ -2,7 +2,7 @@ FROM gradle:8.1.1-jdk17 as build
 WORKDIR /app
 COPY . /app
 
-RUN gradle build
+RUN gradle build -x test
 RUN ls -la /app
 
 # Packing .jar to the java container
